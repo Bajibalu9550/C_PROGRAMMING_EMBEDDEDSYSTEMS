@@ -1,22 +1,22 @@
-# 📚 Creating a Linked List with n Nodes
+# Creating a Linked List with n Nodes
 
-## ✅ Theory: How to Create a Linked List with n Nodes
+##  Theory: How to Create a Linked List with n Nodes
 
-1️⃣ **Define the Node Structure**  
+1️ **Define the Node Structure**  
 - Create a `struct Node` with two members:
   - `data`: stores the value of the node.
   - `next`: a pointer to the next node.
 
-2️⃣ **Decide the Number of Nodes**  
+2️ **Decide the Number of Nodes**  
 - Ask the user for `n`, the number of nodes to create.
 
-3️⃣ **Create the First Node (Head)**
+3️ **Create the First Node (Head)**
 - Allocate memory for the first node using `malloc()`.
 - Set its `data` field with user input.
 - Point its `next` to `NULL` initially.
 - Save its address as the `head` of the list.
 
-4️⃣ **Create Remaining Nodes**
+4️ **Create Remaining Nodes**
 - Loop from 2 to `n`:
   - For each node:
     - Allocate memory for the new node.
@@ -25,19 +25,19 @@
     - Link the previous node’s `next` to this new node.
     - Move the temporary pointer to the new node.
 
-5️⃣ **Traverse the List**
+5️ **Traverse the List**
 - Start from `head` and move through each node using `next`.
 - Print each node’s data until you reach `NULL`.
 
 ---
 
-## ✅ C Code: Create Linked List with n Nodes
+##  C Code: Create Linked List with n Nodes
 
 ```c
 #include <stdio.h>
 #include <stdlib.h>
 
-// Define the node structure
+
 struct Node {
     int data;
     struct Node* next;
@@ -55,7 +55,7 @@ int main() {
         return 0;
     }
 
-    // Step 1: Create the first node (head)
+    
     newNode = (struct Node*)malloc(sizeof(struct Node));
     if (newNode == NULL) {
         printf("Memory allocation failed.\n");
@@ -68,7 +68,7 @@ int main() {
     head = newNode;  // first node is head
     temp = head;
 
-    // Step 2: Create remaining nodes
+   
     for (i = 2; i <= n; i++) {
         newNode = (struct Node*)malloc(sizeof(struct Node));
         if (newNode == NULL) {
@@ -80,11 +80,11 @@ int main() {
         newNode->data = value;
         newNode->next = NULL;
 
-        temp->next = newNode;  // link previous node to new node
-        temp = newNode;        // move temp to new node
+        temp->next = newNode;  
+        temp = newNode;        
     }
 
-    // Step 3: Traverse and print the list
+    
     printf("Linked list: ");
     temp = head;
     while (temp != NULL) {

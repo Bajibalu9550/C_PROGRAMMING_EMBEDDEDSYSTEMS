@@ -1,5 +1,5 @@
-# Write a program to print the value of array elements  using pointers and subscript notation
----
+# Write a program to print the value and address of array elements by subscripting  a pointer variable.
+----
 ```
 #include <stdio.h>
 

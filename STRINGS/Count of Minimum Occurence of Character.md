@@ -50,4 +50,4 @@ int main() {
 Sample Output
 
 Enter String: bajibalu pagolu
-Minimum Occurrence Character 'b' count:1
+Minimum Occurrence Character 'j' count: 1

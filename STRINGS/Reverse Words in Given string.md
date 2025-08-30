@@ -10,61 +10,50 @@ This program reverses the **word order** in a given input string using a two-ste
 ## Code
 
 ```c
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <limits.h>
-
-void reverse_words(char *str, int start, int end) {
-    reverse(str, start, end);
-    reverse_letters(str, start, end);
-}
-
-void reverse_letters(char *str, int start, int end) {
-    int wst, wed;
-    for (wst = wed = start; wed < end; wed++) {
-        if (str[wed] == ' ') {
-            continue;
-        }
-        wst = wed;
-        while (str[wed] != ' ' && wed <= end) {
-            wed++;
-        }
-        wed--;
-        reverse(str, wst, wed);
-    }
-}
-
-void reverse(char *str, int start, int end) {
-    char temp;
-    while (start <= end) {
-        temp = str[start];
-        str[start] = str[end];
-        str[end] = temp;
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+void reverse(char *str,int start,int end){
+    while(start<end){
+        char temp=*(str+start);
+        *(str+start)=*(str+end);
+        *(str+end)=temp;
         start++;
         end--;
     }
 }
 
-int main() {
-    char *str = malloc(100 * sizeof(char));
-    if (str == NULL) {
-        printf("Memory allocation failed");
-        return 1;
+void reverse_words(char *str,int start,int end){
+    int w_start,w_end;
+    for(w_start=w_end=start;w_end<end;w_end++){
+        if(str[w_end]==' ')
+            continue;
+        w_start=w_end;
+        while(str[w_end]!=' '&&str[w_end]!='\0')
+            w_end++;
+        w_end--;
+        reverse(str,w_start,w_end);
     }
-    printf("Enter string Which contains words: ");
-    fgets(str, 100, stdin);
-    str[strlen(str) - 1] = '\0';
-    reverse_words(str, 0, strlen(str)-1);
-    printf("%s\n", str);
+}
+int main(){
+    char *str=malloc(100);
+    if(str==NULL){
+        printf("Memory allocation failed");
+        exit(1);
+    }
+    printf("Enter string: ");
+    fgets(str,100,stdin);
+    str[strlen(str)-1]='\0';
+    reverse(str,0,strlen(str)-1);
+    reverse_words(str,0,strlen(str));
+    printf("Reversed string: %s\n",str);
     free(str);
 }
-
 
 Input
 
 Enter string Which contains words: Hello World from C
 
- Output
+ Output:
 
 C from World Hello

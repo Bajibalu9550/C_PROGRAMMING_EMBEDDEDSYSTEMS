@@ -22,7 +22,7 @@ void removeCommonChars(char str1[], char str2[]) {
             if (str1[i] == str2[j]) {
                 removeChar(str1, str1[i]);
                 removeChar(str2, str1[i]);
-                i = -1; // Restart loop since string changed
+                i = -1; 
                 break;
             }
         }

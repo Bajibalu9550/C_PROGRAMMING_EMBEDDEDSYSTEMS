@@ -45,12 +45,7 @@ int main() {
 }
 
 OUTPUT:
-Enter first string: hello
-Enter second string: world
-Resultant first string: he
-Resultant second string: wrd
-
-Enter first string: programming
-Enter second string: language
-Resultant first string: progmin
-Resultant second string: lue
+Enter first string: bajibalu
+Enter second string: pagolu
+Resultant first string: bjib
+Resultant second string: pgo

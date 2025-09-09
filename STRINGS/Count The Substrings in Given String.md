@@ -49,4 +49,4 @@ int main() {
 
 Enter string: ababcababc
 Enter substring: ab
-count of substring present in given string: 3
+count of substring present in given string: 4

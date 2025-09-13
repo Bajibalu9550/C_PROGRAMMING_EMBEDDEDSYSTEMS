@@ -1176,56 +1176,145 @@ int main() {
 ```
 73. Remove first occurrence of a word
 ```
-#include <stdio.h>
-#include <string.h>
-int main() {
-    char str[200], word[50], *ptr;
-    printf("Enter string: "); fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    printf("Enter word to remove: "); scanf("%s", word);
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-    ptr = strstr(str, word);
-    if(ptr) memmove(ptr, ptr + strlen(word), strlen(ptr + strlen(word)) + 1);
-    printf("Result: %s\n", str);
-    return 0;
+void remove_first(char *str,char *word){
+        int m=strlen(str);
+        int n=strlen(word);
+
+        for(int i=0;i<=m-n;i++){
+                int found=1;
+                int j;
+                for( j=0;j<n;j++){
+                        if(str[i+j]!=word[j])
+                                break;
+                }
+                if(j==n){
+                        for(int k=i;k<=m-n;k++){
+                                str[k]=str[k+n];
+                        }
+                        break;
+                }
+        }
+        printf("Updated string: %s\n",str);
 }
+int main(){
+        char *str1=malloc(100);
+        char *word=malloc(50);
+        if(str1==NULL || word==NULL){
+                printf("Memory allocatio failed.\n");
+                exit(1);
+        }
+
+        printf("Enter string: ");
+        fgets(str1,100,stdin);
+        str1[strlen(str1)-1]='\0';
+
+        printf("Enter word: ");
+        fgets(word,50,stdin);
+        word[strlen(word)-1]='\0';
+
+
+        remove_first(str1,word);
+}
+
 ```
 74. Remove last occurrence of a word
 ```
-#include <stdio.h>
-#include <string.h>
-int main() {
-    char str[200], word[50], *ptr, *last=NULL;
-    printf("Enter string: "); fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    printf("Enter word to remove: "); scanf("%s", word);
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-    ptr = str;
-    while((ptr = strstr(ptr, word)) != NULL) {
-        last = ptr;
-        ptr++;
-    }
-    if(last) memmove(last, last + strlen(word), strlen(last + strlen(word)) + 1);
-    printf("Result: %s\n", str);
-    return 0;
+void remove_first(char *str,char *word){
+        int m=strlen(str);
+        int n=strlen(word);
+        int index;
+
+        for(int i=0;i<=m-n;i++){
+                int found=1;
+                int j;
+                for( j=0;j<n;j++){
+                        if(str[i+j]!=word[j])
+                                break;
+                }
+                if(j==n){
+                        index=i;
+                }
+        }
+        for(int k=index;k<=m-n;k++){
+                str[k]=str[k+n];
+        }
+        printf("Updated string: %s\n",str);
 }
+int main(){
+        char *str1=malloc(100);
+        char *word=malloc(50);
+        if(str1==NULL || word==NULL){
+                printf("Memory allocatio failed.\n");
+                exit(1);
+        }
+
+        printf("Enter string: ");
+        fgets(str1,100,stdin);
+        str1[strlen(str1)-1]='\0';
+
+        printf("Enter word: ");
+        fgets(word,50,stdin);
+        word[strlen(word)-1]='\0';
+
+
+        remove_first(str1,word);
+}
+
 ```
 75. Remove all occurrences of a word
 ```
-#include <stdio.h>
-#include <string.h>
-int main() {
-    char str[200], word[50], *ptr;
-    printf("Enter string: "); fgets(str,sizeof(str),stdin);
-    str[strcspn(str,"\n")]='\0';
-    printf("Enter word to remove: "); scanf("%s", word);
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
 
-    while((ptr = strstr(str, word)) != NULL) {
-        memmove(ptr, ptr + strlen(word), strlen(ptr + strlen(word)) + 1);
-    }
-    printf("Result: %s\n", str);
-    return 0;
+void remove_first(char *str,char *word){
+        int m=strlen(str);
+        int n=strlen(word);
+
+        for(int i=0;i<=m-n;i++){
+                int found=1;
+                int j;
+                for( j=0;j<n;j++){
+                        if(str[i+j]!=word[j])
+                                break;
+                }
+                if(j==n){
+                        for(int k=i;k<=m-n;k++){
+                                str[k]=str[k+n];
+                        }
+                        
+                }
+        }
+        printf("Updated string: %s\n",str);
 }
+int main(){
+        char *str1=malloc(100);
+        char *word=malloc(50);
+        if(str1==NULL || word==NULL){
+                printf("Memory allocatio failed.\n");
+                exit(1);
+        }
+
+        printf("Enter string: ");
+        fgets(str1,100,stdin);
+        str1[strlen(str1)-1]='\0';
+
+        printf("Enter word: ");
+        fgets(word,50,stdin);
+        word[strlen(word)-1]='\0';
+
+
+        remove_first(str1,word);
+}
+
 ```
 76. Trim leading white space
 ```

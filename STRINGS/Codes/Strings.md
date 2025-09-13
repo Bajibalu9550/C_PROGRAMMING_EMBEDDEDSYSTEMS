@@ -1342,25 +1342,32 @@ int main() {
 ```
 77. Trim trailing white space
 ```
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<ctype.h>
+int main(){
+        char *str=malloc(100);
+        if(str==NULL){
+                printf("Memory allocation failed.\n");
+                exit(1);
+        }
 
-void trim_trailing(char *str) {
-    int i = strlen(str) - 1;
-    while(i >= 0 && isspace(str[i])) str[i--] = '\0';
+        printf("Enter string: ");
+        fgets(str,100,stdin);
+        str[strlen(str)-1]='\0';
+        printf("Before remove space: string length= %d\n",strlen(str));
+        int i=strlen(str)-1;
+        while(isspace(str[i]) && i>=0){
+                i--;
+        }
+        str[i+1]='\0';
+
+        printf("Updated string:%s\n",str);
+        printf("After Remove triling spaces: string len: %d\n",strlen(str));
 }
 
-int main() {
-    char str[100];
-    printf("Enter string: ");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str,"\n")] = 0;
-
-    trim_trailing(str);
-    printf("Trimmed trailing spaces: '%s'\n", str);
-    return 0;
-}
 ```
 78. Trim both leading and trailing
 ```

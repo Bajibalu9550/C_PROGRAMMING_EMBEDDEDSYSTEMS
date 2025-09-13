@@ -1371,29 +1371,39 @@ int main(){
 ```
 78. Trim both leading and trailing
 ```
-#include <stdio.h>
-#include <string.h>
-#include <ctype.h>
+#include<stdio.h>
+#include<string.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<ctype.h>
+int main(){
+        char *str=malloc(100);
+        if(str==NULL){
+                printf("Memory allocation failed.\n");
+                exit(1);
+        }
 
-void trim(char *str) {
-    int i = 0, j = 0;
-    while(isspace(str[i])) i++;
-    int len = strlen(str);
-    while(len > i && isspace(str[len-1])) len--;
-    while(i < len) str[j++] = str[i++];
-    str[j] = '\0';
+        printf("Enter string: ");
+        fgets(str,100,stdin);
+        str[strlen(str)-1]='\0';
+        printf("Before remove space: string length= %d\n",strlen(str));
+        int j=0,k=0;
+        while(isspace(str[j])){
+                j++;
+        }
+        while(str[j]){
+                str[k++]=str[j++];
+        }
+        int i=strlen(str)-1;
+        while(isspace(str[i]) && i>=0){
+                i--;
+        }
+        str[i+1]='\0';
+
+        printf("Updated string:%s\n",str);
+        printf("After Remove triling spaces: string len: %d\n",strlen(str));
 }
 
-int main() {
-    char str[100];
-    printf("Enter string: ");
-    fgets(str, sizeof(str), stdin);
-    str[strcspn(str,"\n")] = 0;
-
-    trim(str);
-    printf("Trimmed string: '%s'\n", str);
-    return 0;
-}
 ```
 79. Remove all extra blank spaces
 ```

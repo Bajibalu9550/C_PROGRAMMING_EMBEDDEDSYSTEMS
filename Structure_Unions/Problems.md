@@ -1,120 +1,209 @@
 1. What keyword is used to define a structure in C?
+
 a) struct
+
 b) union
+
 c) typedef
+
 d) define
+
 Answer: a
 
 2. Which of the following statements is true about accessing members of a structure?
+
 a) Members are accessed using the dot (.) operator
+
 b) Members are accessed using the arrow (->) operator
+
 c) All members must have the same data type
+
 d) Structures cannot hold members of different data types
+
 Answer: a
 
+
 3. What is the size of a structure in memory?
+
 a) The size is always equal to the size of its largest member
+
 b) The size is the sum of the sizes of all its members
+
 c) The size depends on the compiler implementation
+
 d) Structures do not occupy any memory space
+
 Answer: c
 
 4. What is the difference between a structure and a union?
+
 a) Structures cannot hold different data types, while unions can
+
 b) Unions can only hold one value at a time, while structures can hold multiple values
+
 c) Structures are used for grouping related data, while unions are used for memory optimization
+
 d) All of the above
+
 Answer: b
 
 5. Which of the following statements is NOT valid for initializing a structure?
+
 a) Using a comma-separated list of values inside curly braces
+
 b) Assigning another structure variable of the same type
+
 c) Using individual assignment statements for each member
+
 d) Initializing only some members, leaving others undefined
+
 Answer: d
 
 6. What is the purpose of the -> operator when accessing members of a structure?
+
 a) It is used to access members of a structure pointer variable
+
 b) It is used to modify members of a structure by reference
+
 c) It is an alternative way to access members of any structure
+
 d) It is not a valid operator for accessing structure members
+
 Answer: a
 
 7. How can you pass a structure by value to a function in C?
+
 a) By passing the structure variable directly
+
 b) By passing the structure variable using the & (address-of) operator
+
 c) By creating a pointer to the structure and passing the pointer
+
 d) Structures cannot be passed by value to functions
+
 Answer: a
 
 8. What happens when you declare an array of structures?
+
 a) It creates a single structure variable that can hold multiple values
+
 b) It creates multiple copies of the same structure in memory
+
 c) It creates a contiguous block of memory to store multiple structures of the same type
+
 d) It creates a linked list of structures
+
 Answer: c
 
+
 9. What is padding in the context of structures?
+
 a) It is the process of adding extra bytes to the size of a structure to improve memory alignment
+
 b) It is a technique to optimize memory usage by storing smaller data types within larger ones
+
 c) It is a way to dynamically allocate memory for structures at runtime
+
 d) Padding is not relevant to structures in C
+
 Answer: a
 
 10. What is the most common use case for unions in C programming?
+
 a) To group related data of different types under a single name
+
 b) To store multiple values of the same type and access them interchangeably
+
 c) To improve code readability and maintainability
+
 d) To dynamically change the data type of a variable during program execution
+
 Answer: a
 
 11. What is the difference between shallow copy and deep copy when copying structures?
+
 a) Shallow copy copies only the structure itself, while deep copy copies the members recursively
+
 b) Shallow copy copies the structure by value, while deep copy copies by reference
+
 c) Shallow copy uses the = operator, while deep copy requires a custom function
+
 d) There is no difference; both terms refer to the same process
+
 Answer: a
 
 12. What is the use of self-referential structures in C?
+
 a) To represent hierarchical relationships between data, like a tree structure
+
 b) To create circular references that can lead to memory leaks
+
 c) To improve code efficiency by avoiding redundant member declarations
+
 d) Self-referential structures are not allowed in C
+
 Answer: a
 
+
+
 13. What are bit fields in C?
+
 a) A way to pack multiple small data types (like flags) into a single byte of memory
+
 b) A mechanism to define custom operators for user-defined data types
+
 c) A technique to dynamically allocate memory for structures during runtime
+
 d) Bit fields are not relevant to structures in C
+
 Answer: a
 
 14. How can you compare two structures for equality in C?
+
 a) By comparing the addresses of the structure variables
+
 b) By using a built-in compare function for structures
+
 c) By writing a custom function that compares each member individually
+
 d) Structures cannot be compared for equality
+
 Answer: c
 
 15. What is the potential consequence of accessing a union member that hasn’t been initialized?
+
 a) The program will crash due to undefined behavior
+
 b) The value accessed will be the same as the previously accessed member
+
 c) The value accessed will be garbage or random data
+
 d) There is no consequence; any member can be accessed regardless of initialization
+
 Answer: c
 
 16. What is the use of anonymous structures in C?
+
 a) To declare a structure without a name, used only once within a function
+
 b) To define a structure template that can be used to create multiple instances with different names
+
 c) To create a structure that cannot be accessed directly and must be used through a pointer
+
 d) Anonymous structures are not supported in C
+
 Answer: a
 
 17. How can you define a structure within another structure in C?
+
 a) By using nested structures, where one structure is a member of another
+
 b) By creating a pointer to the inner structure within the outer structure
+
 c) By defining both structures separately and using them independently
+
 d) Structures cannot be members of other structures in C
+
 Answer: a
 
 18. Create a structure to represent a student and display details
@@ -701,7 +790,7 @@ Explanation:
 
 
 After value.f = 3.14
-
+```
 
 38–39.
 ```

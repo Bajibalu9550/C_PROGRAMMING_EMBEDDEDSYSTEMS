@@ -172,6 +172,7 @@ ptr = address of the memory which is created by malloc or calloc
   ```
   ### 5. alloca()
   - which is used to create the memory dynamically in stack segment.
+  - The scope of this memory is inside that function only.
  
   ```c
    #include<alloca.h>
@@ -188,3 +189,6 @@ int *const p  - Constant pointer
 const int *p  - Pointer to constant data
 conat int* const p  - Both pointer and data constant
 ```
+## 13. Can you return multiple values from function?
+- Yes by using pointers we can return multiple values from function.
+- For example we can pass array address to function and do some modifications on array elements in function. those modifications will happends in actual values

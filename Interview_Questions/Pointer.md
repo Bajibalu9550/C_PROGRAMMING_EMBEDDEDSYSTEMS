@@ -128,8 +128,63 @@ return_type(*function_pointer[]) (argument_list);
 ## 9. How can ik free the dynamically allocated memory without using free()?
 - We can free by using realloc() function
 
-```
+```c
 ptr=realloc(ptr,0);
 
 ptr = address of the memory which is created by malloc or calloc
+```
+## 10. What is dynamic memory allocation.?
+- By using dynamic memory allocation we can allocate or deallocate the memory at run time or compile time.
+- Dynamic memory allocation can be done in 3 ways:
+  ### 1. malloc()
+  - malloc create a block of memory at run time in heap segment.
+  - The memory which is created by malloc is continuous manner.(like arrays)
+  - The memory created by malloc is by default initialized with garbage values.
+ 
+    ```c
+    void* malloc(size_t size);
+    ```
+  ### 2.calloc()
+  - calloc() is also creates a block of memory at run time in heap segment.
+  - The memory which is create by calloc is bu default initialized with zeros
+  -  The calloc creates a memory like blocks
+ 
+    ```c
+   void * calloc(n,size_t size);
+
+    where n is the number of blocks u want to create and size is the size of the each block
+    ```
+  ### 3. realloc()
+  - realloc is used to increment or decrement the memory which is created my malloc or calloc withput loose the previous data.
+  ```c
+   ptr=malloc(10*sizeof(int));
+
+   ptr=realloc(ptr,20);
+  ```
+  - In the above example the realloc increments the memory which is created by malloc from 10 to 20.
+ 
+
+  ### 4.free()
+  - free is used to deallocte the memory which is already created by the malloc or calloc.
+  - we can also deallocate the memory without using free. i.e, by using realloc
+  ```c
+   ptr=realloc(ptr,0);
+  ```
+  ### 5. alloca()
+  - which is used to create the memory dynamically in stack segment.
+ 
+  ```c
+   #include<alloca.h>
+
+     void *alloca(size_t size);
+  ```
+
+## 11. What happend if you try to dereference NULL pointer?
+- If you try to dereference the NULL pointer then the system crashes with segmentation fault.
+
+## 12. What is const in pointers?
+```c
+int *const p  - Constant pointer
+const int *p  - Pointer to constant data
+conat int* const p  - Both pointer and data constant
 ```

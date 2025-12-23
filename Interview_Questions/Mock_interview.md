@@ -16,3 +16,4 @@
 # 16. __int & __exit what happends when we reverse it?
 # 17.Can we pass data using signal handler? 
 # 18. Why read act as blocking call in special files?
+# 19. exit() internally calls which system call?
